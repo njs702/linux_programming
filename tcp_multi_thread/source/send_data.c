@@ -1,9 +1,9 @@
-#include "thread_functions.h"
+#include "../header/thread_functions.h"
 
 int sendData(FILE* fp, char *ct, char *filename){
 	char protocol[] = "HTTP/1.1 200 OK\r\n";
 	char server[] = "Server:Netscape-Enterprise/6.0\r\n";
-	char cnt_type[] = "Content-Type:text/html\r\n;
+	char cnt_type[] = "Content-Type:text/html\r\n";
 	char end[] = "\r\n";
 	char buf[BUFSIZ];
 	int fd,len;

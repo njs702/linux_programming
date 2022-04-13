@@ -1,0 +1,3 @@
+/home/pi/kosta_prac/tcp_multi_thread/CMakeFiles/rebuild_cache.dir
+/home/pi/kosta_prac/tcp_multi_thread/CMakeFiles/edit_cache.dir
+/home/pi/kosta_prac/tcp_multi_thread/CMakeFiles/webserver.dir

@@ -1,4 +1,4 @@
-#include "thread_functions.h"
+#include "../header/thread_functions.h"
 
 void sendError(FILE* fp){
 	char protocol[] = "HTTP/1.1 400 Bad Request\r\n";

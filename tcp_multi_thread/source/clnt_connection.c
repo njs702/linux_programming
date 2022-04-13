@@ -1,4 +1,4 @@
-#include "thread_functions.h"
+#include "../header/thread_functions.h"
 
 static void *clnt_connection(void *arg){
 	// arg to int format
@@ -45,7 +45,7 @@ static void *clnt_connection(void *arg){
 		fgets(reg_line, BUFSIZ,clnt_read);
 		fputs(reg_line,stdout);
 		strcpy(reg_buf,reg_line);
-		char* = strchr(reg_buf,':');
+		char* filename= strchr(reg_buf,':');
 	} while(strncmp(reg_line,"\r\n",2)); // request header ends with '\r\n'
 
 	// send the file contents to client using file_name

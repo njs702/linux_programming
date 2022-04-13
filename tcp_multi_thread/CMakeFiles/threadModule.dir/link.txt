@@ -1,0 +1,2 @@
+/usr/bin/ar qc libthreadModule.a CMakeFiles/threadModule.dir/source/clnt_connection.c.o CMakeFiles/threadModule.dir/source/send_data.c.o CMakeFiles/threadModule.dir/source/send_error.c.o CMakeFiles/threadModule.dir/source/send_ok.c.o CMakeFiles/threadModule.dir/source/webserver.c.o
+/usr/bin/ranlib libthreadModule.a

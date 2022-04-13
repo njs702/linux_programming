@@ -7,7 +7,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include "thread_functions.h"
+#include "../header/thread_functions.h"
 
 // thread function
 static void *clnt_connection(void *arg);
@@ -18,7 +18,7 @@ void sendError(FILE *fp);
 int main(int argc, char **argv){
 	int ssock;
 	pthread_t thread;
-	struct_sockaddr_in servaddr, cliaddr;
+	struct sockaddr_in servaddr, cliaddr;
 	unsigned int len;
 
 	if(argc!=2){
@@ -57,7 +57,7 @@ int main(int argc, char **argv){
 		
 		// waiting client's connection
 		len = sizeof(cliaddr);
-		csock = accept(ssock,(struct sockaddr*)*cliaddr, &len);
+		csock = accept(ssock,(struct sockaddr*)&cliaddr, &len);
 
 		// change network address to string
 		inet_ntop(AF_INET, &cliaddr.sin_addr,mesg,BUFSIZ);
@@ -65,7 +65,7 @@ int main(int argc, char **argv){
 
 		// if client's request come, create thread & processing it
 		pthread_create(&thread,NULL,clnt_connection,&csock);
-		//pthread_join(thread,NULL);
+		pthread_join(thread,NULL);
 	}
 
 	return 0;
